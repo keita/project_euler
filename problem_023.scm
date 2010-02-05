@@ -1,26 +1,6 @@
 ;; project euler: problem 23
 ;; Keita Yamaguchi
 
-(define cache (make-hash-table 'equal?))
-
-(define (memoize f)
-  (define (memo x)
-    (let1 res (f x) (display #`"memo ,x ,res\n") (hash-table-put! cache x res) res))
-  (lambda (x)
-    (if (hash-table-exists? cache x)
-	(hash-table-get cache x)
-	(memo x))))
-
-;; (define (sum-of-proper-divisors n)
-;;   (define f
-;;     (memoize
-;;      (lambda (i)
-;;        (display #`"f => ,i \n")
-;;        (cond ((eq? i 1) 1)
-;; 	     ((and (eq? (modulo n i) 0) (not (eq? n i))) (display #`"q ,i \n") (+ i (f (- i 1))))
-;; 	     (else (f (- i 1)))))))
-;;   (f n))
-
 (define (sum-of-proper-divisors n)
   (define (f i max)
     (cond ((eq? i 1) (+ 1 (f (+ i 1) (- n 1))))
