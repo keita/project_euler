@@ -15,5 +15,4 @@
 	 (let ((res (if (eq? (date-week-day (make-mydate y m)) 0) 1 0)))
 	   (+ res (count y (+ m 1)))))))
 
-(display (count 1901 1))
-(newline)
+(print (count 1901 1))
