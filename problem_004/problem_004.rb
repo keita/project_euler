@@ -1,3 +1,6 @@
+# project euler: problem 4
+# Keita Yamaguchi, 2010
+
 class Integer
   def is_palindromic?
     ary = to_s.split("")
