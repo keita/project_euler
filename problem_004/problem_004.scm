@@ -21,10 +21,8 @@
 
 (define palindromes (palindrome 100 100))
 
-(display "palindromes made from product of two 3-digit numbers:\n")
-(display palindromes)
-(newline)
+(print "palindromes made from product of two 3-digit numbers:")
+(print palindromes)
 
 (display "Answer: ")
-(display (fold max 0 palindromes))
-(newline)
+(print (fold max 0 palindromes))
