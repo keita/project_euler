@@ -1,0 +1,24 @@
+% project euler: problem 4
+% Keita Yamaguchi, 2010
+
+:- use_module(library(lists)).
+
+palindromic(N) :-
+	atom_number(X,N),
+	atom_chars(X,L),
+	reverse(L,RevL),
+	L = RevL.
+
+palindrome(Min,Max,N) :-
+	between(Min,Max,N1),
+	between(Min,Max,N2),
+	N1 >= N2,
+	N is N1 * N2,
+	palindromic(N).
+
+max_palindrome(Min,Max,N) :-
+	findall(N1,palindrome(Min,Max,N1),L),
+	max_list(L,N).
+
+:- max_palindrome(100,999,N), writeln(N).
+:- halt.
