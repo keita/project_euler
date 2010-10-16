@@ -8,7 +8,7 @@ class Integer
   end
 end
 
-class Multiplier
+class Palindrome
   include Enumerable
 
   def initialize(min,max)
@@ -18,11 +18,12 @@ class Multiplier
   def each
     @r.each do |d1|
       @r.each do |d2|
-       yield d1 * d2 if d1 >= d2
+        next unless d1 >= d2
+        n = d1 * d2
+        yield n if n.is_palindromic?
       end
     end
   end
 end
 
-m = Multiplier.new(100,1000)
-puts m.find_all{|n| n.is_palindromic?}.max
+puts Palindrome.new(100,1000).max
