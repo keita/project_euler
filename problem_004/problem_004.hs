@@ -1,3 +1,7 @@
+-- project euler: problem 4
+-- Keita Yamaguchi, 2010
+-- Haskell(GHC) version
+
 module Main (main) where
 
 -- Is a value palindromic?
