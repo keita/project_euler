@@ -1,3 +1,4 @@
+#!/usr/bin/runhaskell
 -- project euler: problem 1
 -- Keita Yamaguchi, 2010
 -- Haskell version
@@ -7,6 +8,6 @@ import List
 
 mul n = [x | x <- [1..1000], (x `mod` n) == 0]
 
-main = print (show res)
+main = print res
   where
   res = sum ((mul 3) `union` (mul 5))
