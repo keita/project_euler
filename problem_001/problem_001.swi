@@ -1,0 +1,20 @@
+#!/usr/bin/swipl -s
+% project euler: problem 1
+% Keita Yamaguchi, 2010
+% SWI-Prolog version
+
+mul(N,Min,Max,R) :-
+	between(Min,Max,R),
+	M is R mod N,
+	M = 0.
+
+find_mul(N,L) :-
+	findall(R,mul(N,1,1000,R),L).
+
+sum([],0).
+sum([H|L],R) :-
+	sum(L,R1),
+	R is H + R1.
+
+:- find_mul(3,L3), find_mul(5,L5), union(L3,L5,L), sum(L,R), writeln(R).
+:- halt.
