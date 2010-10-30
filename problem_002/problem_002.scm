@@ -1,3 +1,4 @@
+#!/usr/bin/env gosh
 ;; project euler: problem 2
 ;; Keita Yamaguchi
 
@@ -10,14 +11,11 @@
 (define fib4m (fib 1 2))
 (define fib4m_even (filter even? fib4m))
 
-(display "fib sequence below 4m:\n")
-(display fib4m)
-(newline)
+(print "fib sequence below 4m:")
+(print fib4m)
 
-(display "even numbers of the fib sequence below 4m:\n")
-(display fib4m_even)
-(newline)
+(print "even numbers of the fib sequence below 4m:")
+(print fib4m_even)
 
-(display "Answer: ")
-(display (fold + 0 fib4m_even))
-(newline)
+(print "Answer: ")
+(print (fold + 0 fib4m_even))
