@@ -1,3 +1,4 @@
+#!/usr/bin/env gosh
 ;; project euler: problem 1
 ;; scheme version
 ;; Keita Yamaguchi
