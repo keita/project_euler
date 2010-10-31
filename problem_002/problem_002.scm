@@ -1,6 +1,7 @@
 #!/usr/bin/env gosh
 ;; project euler: problem 2
 ;; Keita Yamaguchi
+;; scheme
 
 (use srfi-1)
 
