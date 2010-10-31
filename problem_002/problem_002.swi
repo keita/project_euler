@@ -1,0 +1,28 @@
+#!/usr/bin/swipl -s
+% project euler: problem 2
+% Keita Yamaguchi, 2010
+% SWI-Prolog version
+
+fib(Max,1,[],R) :- fib(Max,2,[1],R).
+fib(Max,2,L,R) :- fib(Max,3,[2|L],R).
+fib(Max,I,[N1|[N2|T]],R) :-
+	N is N1 + N2,
+	N < Max,
+	!,
+	fib(Max,I+1,[N|[N1|[N2|T]]],R).
+fib(_,_,L,R) :- R = L.
+
+select_even(E,L) :-
+	select(E,L,_),
+	N is E mod 2,
+	N = 0.
+
+evenseq(L,R) :- findall(E,select_even(E,L),R).
+
+sum([],0).
+sum([H|L],R) :-
+	sum(L,R1),
+	R is H + R1.
+
+:- fib(4000000,1,[],R), evenseq(R,ER), sum(ER,N), writeln(N).
+:- halt.
