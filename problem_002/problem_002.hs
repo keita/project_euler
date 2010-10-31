@@ -6,15 +6,15 @@
 module Main(main) where
 
 -- fibonacci sequence
-fib max 1 ls = fib max 2 (1:ls)
-fib max 2 ls = fib max 3 (2:ls)
-fib max n ls =
-  if r < max then fib max (n + 1) (r:ls) else ls
+fib max = f 1 []
   where
-    r = r1 + r2
-    r1 = head ls
-    r2 = head (tail ls)
+    f 1 ls = f 2 (1:ls)
+    f 2 ls = f 3 (2:ls)
+    f n ls =
+      if r < max then f (n + 1) (r:ls) else ls
+        where
+          r = (head ls) + (head (tail ls))
 
-evenseq = [x| x <- fib 4000000 1 [], even x]
+evenseq = [x | x <- fib 4000000, even x]
 
 main = print (sum evenseq)
