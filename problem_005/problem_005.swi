@@ -1,0 +1,31 @@
+#!/usr/bin/swipl -s
+% project euler: problem 005
+% Keita Yamaguchi, 2010
+% SWI-Prolog version
+
+check(N,I) :-
+	M is I mod N,
+	M == 0.
+
+divisible(I) :-
+	check(11,I),
+	check(12,I),
+	check(13,I),
+	check(14,I),
+	check(15,I),
+	check(16,I),
+	check(17,I),
+	check(18,I),
+	check(19,I),
+	check(20,I).
+
+find_divisible(N,R) :-
+	divisible(N),
+	!,
+	R = N.
+find_divisible(N,R) :-
+	Next is N + 20,
+	find_divisible(Next,R).
+
+:- find_divisible(20,R), writeln(R).
+:- halt.
