@@ -1,0 +1,19 @@
+#!/usr/bin/swipl -s
+% project euler: problem 3
+% Keita Yamaguchi, 2010
+% SWI-Prolog version
+
+prime_factor(1,_,[]).
+prime_factor(N,I,R) :-
+	Q is N//I,
+	M is mod(N,I),
+	M = 0,
+	!,
+	prime_factor(Q,2,Rec),
+	R = [I|Rec].
+prime_factor(N,I,R) :-
+	Next is I + 1,
+	prime_factor(N,Next,R).
+
+:- prime_factor(600851475143,2,R), writeln(R).
+:- halt.
