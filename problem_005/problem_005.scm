@@ -1,5 +1,6 @@
 ;; project euler: problem 5
 ;; Keita Yamaguchi
+;; scheme version
 
 (define (is_dividible n)
   (and (eq? (modulo n 20) 0)
