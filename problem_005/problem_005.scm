@@ -3,7 +3,7 @@
 ;; Keita Yamaguchi
 ;; scheme version
 
-(define (is_dividible n)
+(define (is_divisible n)
   (and (eq? (modulo n 20) 0)
        (eq? (modulo n 19) 0)
        (eq? (modulo n 18) 0)
@@ -15,9 +15,9 @@
        (eq? (modulo n 12) 0)
        (eq? (modulo n 11) 0)))
 
-(define (dividible_number n)
-  (if (is_dividible n) n
-      (dividible_number (+ n 20))))
+(define (divisible_number n)
+  (if (is_divisible n) n
+      (divisible_number (+ n 20))))
 
 (print "Answer: ")
-(print (dividible_number 20))
+(print (divisible_number 20))
