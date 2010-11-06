@@ -1,5 +1,7 @@
+#!/usr/bin/env gosh
 ;; project euler: problem 7
 ;; Keita Yamaguchi
+;; scheme version
 
 (define (is_prime n primes)
   (if (null? primes) #t
@@ -12,6 +14,4 @@
 	  (prime (+ n 1) (cons n primes))
 	  (prime (+ n 1) primes))))
 
-(display "Answer: ")
-(display (prime 2 '()))
-(newline)
+(print (prime 2 '()))
