@@ -17,6 +17,5 @@
   (if (is_dividible n) n
       (dividible_number (+ n 20))))
 
-(display "Answer: ")
-(display (dividible_number 20))
-(newline)
+(print "Answer: ")
+(print (dividible_number 20))
