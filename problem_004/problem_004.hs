@@ -1,6 +1,7 @@
+#!/usr/bin/env runhaskell
 -- project euler: problem 4
 -- Keita Yamaguchi, 2010
--- Haskell(GHC) version
+-- Haskell version
 
 module Main (main) where
 
@@ -21,8 +22,7 @@ palindrome min max n1 n2
 
 -- get max palindrome and print it
 main =
-  putStrLn (show n)
+  print (palindrome min max min min)
     where
       min = 100
       max = 1000
-      n = palindrome min max min min
