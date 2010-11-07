@@ -1,5 +1,7 @@
+#!/usr/bin/env gosh
 ;; project euler: problem 8
 ;; Keita Yamaguchi
+;; scheme version
 
 (define digits
   (string-append "73167176531330624919225119674426574742355349194934"
@@ -33,6 +35,4 @@
 
 (define greatest (fold max 0 (product-of-5digits 0)))
 
-(display "Answer: ")
-(display greatest)
-(newline)
+(print greatest)
