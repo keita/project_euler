@@ -30,7 +30,7 @@ list =
    "71636269561882670428252483600823257530420752963450"]
 d = concat list
 
--- get 5-digits
+-- find max 5-digits product
 findMaxProduct d maxVal =
   if length digits == 5 then findMaxProduct next newMaxVal else maxVal
   where
