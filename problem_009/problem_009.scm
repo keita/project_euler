@@ -19,6 +19,4 @@
       (let1 pproduct (find-Pythagorean2 1 c)
 	    (if (> pproduct 0) pproduct (find-Pythagorean (+ c 1))))))
 
-(display "Answer: ")
-(display (find-Pythagorean 2))
-(newline)
+(print (find-Pythagorean 2))
