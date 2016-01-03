@@ -1,8 +1,8 @@
-;; project euler: problem 37
+;; project euler: problem 38
 ;; Keita Yamaguchi <keita.yamaguchi@gmail.com>
 ;;
 ;; scheme version solver:
-;;   gosh problem_037.scm
+;;   gosh problem_038.scm
 
 (define (pandigital? size n)
   (equal? (sort (string->list (number->string n)))
