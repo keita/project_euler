@@ -1,8 +1,8 @@
-;; project euler: problem 35
+;; project euler: problem 30
 ;; Keita Yamaguchi <keita.yamaguchi@gmail.com>
 ;;
 ;; scheme version solver:
-;;   gosh problem_035.scm
+;;   gosh problem_030.scm
 
 (define (memoize f)
   (let* ((cache (make-hash-table 'equal?)))
